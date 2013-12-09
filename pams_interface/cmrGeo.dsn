@@ -1,0 +1,7 @@
+[ODBC]
+DRIVER=SQL Server Native Client 11.0
+DATABASE=cmrGeo
+WSID=BARD_AMEDIALAP
+APP=Microsoft Office 2013
+Trusted_Connection=Yes
+SERVER=localhost\sqlexpress
