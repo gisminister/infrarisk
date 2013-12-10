@@ -1,6 +1,6 @@
-CICERO Risk Model (CMR)
+CICERO Multi Risk (CMR)
 =======================
-Kildekode for risikomodellen som er brukt i [infrarisk-prosjektet](http://infrarisk.ngi.no)
+Kildekode for risikomodellen (CMR) som er brukt i [infrarisk-prosjektet](http://infrarisk.ngi.no)
 
 Installasjon
 ------------
