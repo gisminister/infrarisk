@@ -6,7 +6,7 @@ Kildekode for risikomodellen brukt i infrarisk-prosjektet, heretter kalt CMR (CI
 Installasjon
 ------------
 For å kjøre modellen trenger du ArcGIS (10.1) og Microsoft SQL Server/SQL Server Express.
-Du kan laste ned og installere MS SqlExpress gratis (herfra)[https://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx].
+Du kan laste ned og installere MS SqlExpress gratis [herfra](https://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx).
 
 Først:
 -Opprett en ny database på SQL serveren (la oss kallen den cmr).
