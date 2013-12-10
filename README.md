@@ -5,7 +5,7 @@ Kildekode for risikomodellen som er brukt i [infrarisk-prosjektet](http://infrar
 Installasjon
 ------------
 For å kjøre modellen trenger du ArcGIS (10.1) og Microsoft SQL Server/SQL Server Express.
-SQL Server Express skal følge med ArcGIS, men dersom du ikke har den installert kan du laste den ned fra (https://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx).
+SQL Server Express skal følge med ArcGIS, men dersom du ikke har den installert kan du laste den ned hos [Microsoft](https://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx).
 
 Først:
 - I ArcCatalog, gå til Database Servers. Legg til/åpne sqlserveren og opprett en ny geodatabase ved navn cmrGeo.
