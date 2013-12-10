@@ -32,6 +32,3 @@ Til slutt
 -------------
 Du må regne med å fikle litt med dette før du får det til å funke. Og, når du har fått det til å funke, så må du regne med å bruke et par dager på å forstå resultatene.
 Modellen er laget for infrarisk prosjektet og den er ikke 100% generisk, det er sikkert ting som ikke passer helt til ditt behov. Send en epost dersom du har spørsmål, eller har forslag til endringer.
-
-
-Du bør regne med å bruke et par dager på å skjønne hvordan dette funker. 
