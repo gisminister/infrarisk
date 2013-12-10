@@ -1,6 +1,6 @@
 CICERO Multi Risk (CMR)
 =======================
-Kildekode for risikomodellen som er brukt i [infrarisk-prosjektet](http://infrarisk.ngi.no)
+Kildekode for risikomodellen som er brukt i [infrarisk-prosjektet](http://infrarisk.ngi.no). En enkel beskrivelse av modellen og resultater fra et par case studier finner du [her](http://www.ngi.no/upload/Prosjektweb/InfraRisk/Sluttseminar/06-INFRARISK_Skredrisiko-for-transportinfrastrukturen.pdf) eller i prosjektets sluttrapport (kommer desember 2013).
 
 Installasjon
 ------------
