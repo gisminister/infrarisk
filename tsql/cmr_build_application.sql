@@ -1,11 +1,11 @@
 /*
 NOTE: Create a fresh database first and change the name in the first line of this script
 To create the database, simply run the following command:
-CREATE database cmrGeo
+CREATE database cmrGeo2
 GO
 */
 
-USE cmrGeo --THIS DATABASE MUST EXIST, if not the script will be executed in the database you are currently sitting in...
+USE cmrGeo2 --THIS DATABASE MUST EXIST, if not the script will be executed in the database you are currently sitting in...
 GO
 SET ANSI_NULLS ON
 GO
