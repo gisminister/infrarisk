@@ -6,12 +6,12 @@ Kildekode for risikomodellen brukt i infrarisk-prosjektet, heretter kalt CMR (CI
 Installasjon
 ------------
 For å kjøre modellen trenger du ArcGIS (10.1) og Microsoft SQL Server/SQL Server Express.
-Du kan laste ned og installere MS SqlExpress gratis [herfra](https://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx).
+SQL Server Express skal følge med ArcGIS, men dersom du ikke har den installert kan du laste den ned fra (https://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx).
 
 Først:
 - I ArcCatalog, gå til Database Servers. Legg til/åpne sqlserveren og opprett en ny geodatabase ved navn cmrGeo.
 - Opprett så en SDE connection til databasen (i ArcCatalog, velg Add Spatial Database Connection, velg server (localhost), service (sde:sqlserver:localhost\sqlexpress) og database (cmrGeo), bruk Operating system authentication og test at connection fungerer (prøv deg litt frem så finner du ut av det).
-- Gi connection et fornuftig navn (f.eks. cmrGeo@localost.sde)
+- Gi connection et fornuftig navn.
 - Kjør sql-scriptet (tsql/build_application.sql) i SQL server for å opprette de nødvendige tabeller etc. i databasen (bruk f.eks. SSMS - SQL Server Management Studio - for å kjøre scriptet)
 
 Så:
@@ -30,7 +30,7 @@ Fra toolboxen i ArcGIS kan du kjøre Run CMR Model. Du får da opp en dialogboks
 - AADT field: felt med AADT/ÅDT for persontrafikk
 - AADT goods field: felt med AADT/ÅDT for godstrafikk
 - Diversion time field: felt med omkjøringstid (bør være samme for alle objekter med samme rute)
-- Output GDB (optional): Path til en geodatabase der kartresultater kan lagres 
+- Output GDB: Path til en geodatabase der kartresultater skal lagres 
 
 Modellen bruker et minutt eller to på å kjøre gjennom den romlige analysen, avhengig av hvor rask maskina di er.
 Etter at modellen har kjørt ferdig skal den ha laget tre nye layers i legenden din:
@@ -42,5 +42,5 @@ Prøv deg frem med vise ulike atributter i de to summary lagene
 
 Til slutt
 -------------
-Du må regne med å fikle litt med dette før du får det til å funke. Og, når du har fått det til å funke, så må du regne med å bruke et par dager på å forstå resultatene.
+Du må regne med å fikle litt med dette før du får det til å funke. Og når du har fått det til å funke så må du regne med å bruke et par dager på å forstå resultatene.
 Modellen er laget for infrarisk prosjektet og den er ikke 100% generisk, det er sikkert ting som ikke passer helt til ditt behov. Send en epost dersom du har spørsmål, eller har forslag til endringer.
