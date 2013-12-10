@@ -9,8 +9,8 @@ SQL Server Express skal følge med ArcGIS, men dersom du ikke har den installert
 
 Først:
 - I ArcCatalog, gå til Database Servers. Legg til/åpne sqlserveren og opprett en ny geodatabase ved navn cmrGeo.
-- Opprett så en SDE connection til databasen (i ArcCatalog, velg Add Spatial Database Connection, velg server (localhost), service (sde:sqlserver:localhost\sqlexpress) og database (cmrGeo), bruk Operating system authentication og test at connection fungerer (prøv deg litt frem så finner du ut av det).
-- Gi connection et fornuftig navn.
+- Opprett så en SDE connection til databasen (i ArcCatalog, velg Add Spatial Database Connection, velg server (som regel 'localhost'), service (som regel 'sde:sqlserver:localhost\sqlexpress') og database (cmrGeo medmindre du valgte et annet navn), bruk Operating system authentication og test at connection fungerer (prøv deg litt frem så finner du ut av det).
+- Lagre connection som en sde fil, med et fornuftig navn.
 - Kjør sql-scriptet (tsql/build_application.sql) i SQL server for å opprette de nødvendige tabeller etc. i databasen (bruk f.eks. SSMS - SQL Server Management Studio - for å kjøre scriptet)
 
 Så:
@@ -19,7 +19,7 @@ Så:
 Fra toolboxen i ArcGIS kan du kjøre Run CMR Model. Du får da opp en dialogboks. I denne må du velge:
 - SDE Connection: SDE connection til databasen som du opprettet ista
 - Study id (optional): en selvvalgt (numerisk) id for studieområdet ditt
-- Study name og description: selvvalgt tekst som beskriver studiet
+- Study name og description: tekstfelt der du kan beskrive studiet (lurt å bruke disse dersom du skal gjennomføre flere analyser)
 - Hazard zones: Feature layer med polygoner
 - Process type id field: felt med en numerisk id som beskriver hva slags hazard det er snakk om (slås opp mot [proceesstype_id] tabellen cmrT_processType i databasen)
 - Event frequency field: felt med returperiode (beklageligvis har jeg ikke tatt høyde for at returperioden kan være < 1)
