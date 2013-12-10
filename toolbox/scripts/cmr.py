@@ -414,36 +414,3 @@ The OID of the output layer can be used to join individual features to cmr risk 
             except:
                 pass
 
-        
-
-
-if __name__=='__main__':
-
-    #Define parameters
-    studyId = 106
-    studyName = 'Example study'
-    sdeConnFile = r'Database Connections\cmrGeo@localhost.sde'
-    outputGDB = r"\\wii\OfflineFolders\baardr\Documents\cicero\projects\infrarisk\module_d\sluttrapport_figurer\otta\test20130524.gdb"
-    hazardDatasetFilepath = os.path.join(outputGDB, 'hazard_zones')
-    elementDatasetFilepath = os.path.join(outputGDB, 'elements')
-    studyDescription = 'Testing new cmr module with improved line splitting'
-
-    #Create the cmrstudy object
-    myStudy = cmrstudy(sdeConnFile, outputGDB)
-    try:
-        #Initiate the study area
-        myStudy.initiateStudyArea(studyName=studyName
-                                  ,hazardDatasetFilepath=hazardDatasetFilepath
-                                  ,elementDatasetFilepath=elementDatasetFilepath
-                                  ,studyDescription=studyDescription
-                                  ,studyId=studyId)
-        #Apply the geoprocessing
-        if not myStudy.hazardElementIntersection():
-            print "Better luck next time"
-    except Exception, err:
-        sys.stderr.write('ERROR: {0}\n'.format(err))
-        arcpy.AddError('ERROR: {0}\n'.format(err))
-    finally:
-        myStudy.cleanup()
-        
-        

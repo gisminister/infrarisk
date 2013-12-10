@@ -99,7 +99,7 @@ if __name__ == '__main__':
                 #Add the ear layer
                 lyrName = "ear_{0}".format(studyId)
                 arcpy.MakeFeatureLayer_management(myStudy.outputFeatures,lyrName)
-                arcpy.ApplySymbologyFromLayer_management(lyrName, os.path.join(templateDir, "ear_new.lyr"))
+                arcpy.ApplySymbologyFromLayer_management(lyrName, os.path.join(templateDir, "ear.lyr"))
                 myLyr = mapping.Layer(lyrName)
                 mapping.AddLayer(df, myLyr)
 
@@ -108,39 +108,27 @@ if __name__ == '__main__':
                 tblViewName = "elementSummaryTbl_{0}".format(studyId)
                 strCond = "study_id = {0}".format(studyId)
                 arcpy.MakeTableView_management(tblSrc, tblViewName, strCond)
-                #Add layers showing closure, repair and reopening costs
+                #Add a layer showing closure, repair and reopening costs by element
                 lyrName = "elementSummary_{0}".format(studyId)
                 arcpy.MakeFeatureLayer_management(myStudy.outputFeatures,lyrName)
                 arcpy.AddJoin_management(lyrName,"OBJECTID",tblViewName,"element_feature_id","KEEP_ALL")
                 myLyr = mapping.Layer(lyrName)
                 mapping.AddLayer(df, myLyr)
                 
-                ##lyrName = "closureCostsByElement_{0}".format(studyId)
-                ##arcpy.MakeFeatureLayer_management(myStudy.outputFeatures,lyrName)
-                ##arcpy.AddJoin_management(lyrName,"OBJECTID",tblViewName,"element_feature_id","KEEP_COMMON")
-                ##arcpy.ApplySymbologyFromLayer_management(lyrName, os.path.join(templateDir, "closureCostsByElement.lyr"))
-                ##myLyr = mapping.Layer(lyrName)
-                ##mapping.AddLayer(df, myLyr)
-
-
-
                 #Create a route summary table
                 tblSrc = os.path.join(sdeConnFile, "cmrV_RouteSummary")
                 tblViewName = "routeSummaryTbl_{0}".format(studyId)
                 strCond = "study_id = {0}".format(studyId)
                 arcpy.MakeTableView_management(tblSrc, tblViewName, strCond)
-                #Add layers showing closure frequency and costs by route
+                #Add a layer showing closure frequency and costs by route
                 lyrName = "routeSummary_{0}".format(studyId)
                 arcpy.MakeFeatureLayer_management(myStudy.outputFeatures,lyrName)
                 arcpy.AddJoin_management(lyrName,"route_code",tblViewName,"route_code","KEEP_ALL")
                 myLyr = mapping.Layer(lyrName)
                 mapping.AddLayer(df, myLyr)
 
-
                 arcpy.RefreshTOC()
                 arcpy.RefreshActiveView()
-
-                
             else:
                 arcpy.AddError("Geoprocessing failed!")
         except Exception, err:
@@ -151,5 +139,3 @@ if __name__ == '__main__':
             myStudy.cleanup()
     except Exception, err:
         arcpy.AddError('ERROR: {0}\n'.format(err))
-
-
